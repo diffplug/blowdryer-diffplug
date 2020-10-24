@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+apply plugin: 'eclipse'
+tasks.eclipse.dependsOn(cleanEclipse)
+
+repositories {
+	mavenCentral()
+}
