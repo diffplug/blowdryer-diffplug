@@ -70,6 +70,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [3.3.0] - 2021-02-19
 ### Added
 - Added `lgpl-2.1` as a supported license.
 
