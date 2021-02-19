@@ -12,7 +12,7 @@ def nexus_pass =   干.proj('nexus_pass', 'password for nexus/mavencentral (or u
 
 // subset of base/maven
 def maven_artifact  = project.name
-def license         = 干.proj('license', 'supported: [apache, confidential]')
+def license         = 干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')
 def license_bintray = 干.prop('base/maven', "${license}_bintray")
 def git_url         = 干.proj('git_url', 'the git url with no protocol, e.g.: github.com/diffplug/blowdryer')
 

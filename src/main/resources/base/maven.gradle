@@ -13,7 +13,7 @@ def maven_name     = 干.proj('maven_name', 'human-friendly name')
 def maven_desc     = 干.proj('maven_desc', 'human-friendly description')
 
 def javadocLinks   = 干.proj('javadoc_links', "space-delimited links, if you add '/package-list' to the urls you should get a package list").split()
-def license        = 干.proj('license', 'supported: [apache, confidential]')
+def license        = 干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')
 
 def license_name     = 干.prop('base/maven', "${license}_name")
 def license_url      = 干.prop('base/maven', "${license}_url")

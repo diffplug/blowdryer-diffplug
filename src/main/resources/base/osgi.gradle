@@ -5,7 +5,7 @@ def osgi_symbolic_name = 干.proj('osgi_symbolic_name', 'Bundle-SymbolicName')
 
 // subset of base/maven
 def git_url        = 干.proj('git_url', 'the git url with no protocol, e.g.: github.com/diffplug/blowdryer')
-def license        = 干.proj('license', 'supported: [apache, confidential]')
+def license        = 干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')
 def license_url    = 干.prop('base/maven', "${license}_url")
 def maven_desc     = 干.proj('maven_desc', 'human-friendly description')
 
