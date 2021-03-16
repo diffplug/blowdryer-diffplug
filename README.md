@@ -14,8 +14,9 @@
 | [durian-rx](https://github.com/diffplug/durian-rx)                       | 2020-01-12  | `3.1.0`    |
 | [durian-swt](https://github.com/diffplug/durian-swt)                     | 2020-01-12  | `3.1.0`    |
 | [goomph](https://github.com/diffplug/goomph)                             | 2020-01-11  | `3.2.4`    |
+| [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
 | [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-01-23  | `3.1.0`    |
-| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2020-06-05  | `3.2.4`    |
+| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-03-12  | `3.3.0`    |
 | *internal projects*      |  |  |
 | [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.1.0`    |
 
