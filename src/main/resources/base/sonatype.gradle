@@ -1,0 +1,27 @@
+// 干.mustRunAfter('base/maven')
+
+if (project.findProperty('enable_publishing') != 'true') {
+	return
+}
+
+def nexus_user     = 干.proj('nexus_user', 'username for nexus/mavencentral (or unset enable_publishing)')
+def nexus_pass     = 干.proj('nexus_pass', 'password for nexus/mavencentral (or unset enable_publishing)')
+def gpg_key        = 干.proj('gpg_key',        'gpg --export-secret-keys --armor <key-id>')
+def gpg_passphrase = 干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')
+
+apply plugin: 'signing'
+apply plugin: 'io.github.gradle-nexus.publish-plugin'
+
+signing {
+	useInMemoryPgpKeys(gpg_key, gpg_passphrase)
+	sign(extensions.getByName('publishing'))
+}
+
+nexusPublishing {
+	repositories {
+		sonatype {
+			username = nexus_user
+			password = nexus_pass
+		}
+	}
+}

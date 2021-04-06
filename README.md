@@ -49,13 +49,13 @@
 - **base/javadoc-agg** - aggregates javadoc from subprojects
   - `干.proj('javadoc_agg', 'space-delimited list of projects containing javadoc to be aggregated')`
   - (also a subset of **base/maven**)
-- **base/bintray** - publishes to bintray and mavenCentral
-  - requires `id 'com.jfrog.bintray' version '1.8.4'`
+- **base/sonatype** - publishes to mavenCentral
+  - requires `id 'io.github.gradle-nexus.publish-plugin' version '1.0.0'`
   - unless `enable_publishing` is set in `gradle.properties`, this will be skipped
-  - `干.proj('bintray_user', 'username for bintray')`
-  - `干.proj('bintray_pass', 'password for bintray')`
   - `干.proj('nexus_user', 'username for nexus/mavencentral')`
   - `干.proj('nexus_pass', 'password for nexus/mavencentral')`
+  - `干.proj('gpg_key',        'gpg --export-secret-keys --armor <key-id>')`
+  - `干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')`
   - (also a subset of **base/maven**)
 - **base/osgi** - adds OSGi metadata to the jar
   - requires `id 'com.diffplug.osgi.bndmanifest' version '3.22.0'` (or later)
@@ -71,6 +71,8 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- `base/sonatype` has been added (because **BREAKING** `base/bintray` has been removed)
 
 ## [3.3.0] - 2021-02-19
 ### Added
