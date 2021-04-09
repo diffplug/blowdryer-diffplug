@@ -19,7 +19,7 @@ if (tasks.names.contains('changelogCheck')) {
 	}
 	// ensures that changelog bump and push only happens if the publish was successful
 	tasks.named('changelogBump').configure {
-		if (hasPlugin('java')) {
+		if (plugins.hasPlugin('java')) {
 			String pubName = plugins.hasPlugin('java-gradle-plugin') ? 'PluginMaven' : 'MavenJava'
 			dependsOn tasks.named("publish${pubName}PublicationToSonatypeRepository")
 			// only the root project has closeSonatypeStagingRepository, and it finalizes all publishToSonatype tasks
@@ -45,7 +45,7 @@ if (tasks.names.contains('changelogCheck')) {
 		}
 	}
 	parent.tasks.named('changelogBump').configure {
-		if (hasPlugin('java')) {
+		if (plugins.hasPlugin('java')) {
 			String pubName = plugins.hasPlugin('java-gradle-plugin') ? 'PluginMaven' : 'MavenJava'
 			dependsOn tasks.named("publish${pubName}PublicationToSonatypeRepository")
 			dependsOn rootProject.tasks.named('closeAndReleaseSonatypeStagingRepository')

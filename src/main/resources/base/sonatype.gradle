@@ -9,7 +9,7 @@ def nexus_pass     = 干.proj('nexus_pass', 'password for nexus/mavencentral (or
 def gpg_key        = 干.proj('gpg_key',        'gpg --export-secret-keys --armor <key-id>')
 def gpg_passphrase = 干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')
 
-if (hasPlugin('maven-publish')) {
+if (plugins.hasPlugin('maven-publish')) {
 	apply plugin: 'signing'
 	signing {
 		useInMemoryPgpKeys(gpg_key, gpg_passphrase)
