@@ -14,7 +14,7 @@ apply plugin: 'io.github.gradle-nexus.publish-plugin'
 
 signing {
 	useInMemoryPgpKeys(gpg_key, gpg_passphrase)
-	sign(extensions.getByName('publishing'))
+	sign(publishing.publications)
 }
 
 nexusPublishing {
