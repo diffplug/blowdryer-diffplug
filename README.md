@@ -71,6 +71,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [4.0.1] - 2021-04-09
 ### Fixed
 - fix sonatype deployment
 
