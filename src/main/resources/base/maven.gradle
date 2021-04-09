@@ -45,7 +45,7 @@ javadoc {
 apply from: 干.file('helper/javadoc-markdown.gradle')
 apply from: 干.file('helper/javadoc-view.gradle')
 
-boolean isPlugin = plugins.findPlugin('java-gradle-plugin')
+boolean isPlugin = plugins.hasPlugin('java-gradle-plugin')
 publishing.publications.register(isPlugin ? 'pluginMaven' : 'mavenJava', MavenPublication, {
 	artifactId = maven_artifact
 	if (!isPlugin) {

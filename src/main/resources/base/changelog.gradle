@@ -4,7 +4,7 @@
 // this script will look for the changelog tasks in either this project or the parent project,
 // and then set the version from the spotless-changelog plugin. It will also hook the jar task
 // (if present) to depend on changelogCheck, so that a jar will never get published with a bad
-// changelog.  Lastly, changelogBump will depend on a successful bintrayUpload/bintrayPublish.
+// changelog.  Lastly, changelogBump will depend on a successful closeAndReleaseSonatypeStagingRepository.
 
 if (tasks.names.contains('changelogCheck')) {
 	// set the project version for POM, jar manifest, etc.
@@ -19,11 +19,12 @@ if (tasks.names.contains('changelogCheck')) {
 	}
 	// ensures that changelog bump and push only happens if the publish was successful
 	tasks.named('changelogBump').configure {
-		if (tasks.names.contains('bintrayUpload')) {
-			dependsOn tasks.named('bintrayUpload')
-			// only the root project has bintrayPublish, and it finalizes all bintrayUpload tasks
-			// https://github.com/bintray/gradle-bintray-plugin/blob/3fe02dfdae3e807afba57e0140a0d4c2424674e1/src/main/groovy/com/jfrog/bintray/gradle/ProjectsEvaluatedBuildListener.groovy#L37-L41
-			dependsOn rootProject.tasks.named('bintrayPublish')
+		if (hasPlugin('java')) {
+			String pubName = plugins.hasPlugin('java-gradle-plugin') ? 'PluginMaven' : 'MavenJava'
+			dependsOn tasks.named("publish${pubName}PublicationToSonatypeRepository")
+			// only the root project has closeSonatypeStagingRepository, and it finalizes all publishToSonatype tasks
+			// https://github.com/gradle-nexus/publish-plugin
+			dependsOn rootProject.tasks.named('closeAndReleaseSonatypeStagingRepository')
 		}
 		// if we have a gradle plugin, we need to push it up to the plugin portal too
 		if (tasks.names.contains('publishPlugins')) {
@@ -44,9 +45,10 @@ if (tasks.names.contains('changelogCheck')) {
 		}
 	}
 	parent.tasks.named('changelogBump').configure {
-		if (tasks.names.contains('bintrayUpload')) {
-			dependsOn tasks.named('bintrayUpload')
-			dependsOn rootProject.tasks.named('bintrayPublish')
+		if (hasPlugin('java')) {
+			String pubName = plugins.hasPlugin('java-gradle-plugin') ? 'PluginMaven' : 'MavenJava'
+			dependsOn tasks.named("publish${pubName}PublicationToSonatypeRepository")
+			dependsOn rootProject.tasks.named('closeAndReleaseSonatypeStagingRepository')
 		}
 		if (tasks.names.contains('publishPlugins')) {
 			dependsOn tasks.named('publishPlugins')
