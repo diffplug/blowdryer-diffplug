@@ -71,6 +71,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [4.0.0] - 2021-04-09
 ### Added
 - `base/sonatype` has been added (because **BREAKING** `base/bintray` has been removed)
 
