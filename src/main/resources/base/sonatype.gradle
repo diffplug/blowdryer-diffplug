@@ -18,6 +18,9 @@ if (plugins.hasPlugin('maven-publish')) {
 }
 
 if (project.parent == null) {
+	if (group == null) {
+		throw new Error('You must set maven group in the root project')
+	}
 	// it's the root project
 	apply plugin: 'io.github.gradle-nexus.publish-plugin'
 	nexusPublishing {
