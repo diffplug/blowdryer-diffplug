@@ -18,7 +18,7 @@ if (plugins.hasPlugin('maven-publish')) {
 }
 
 if (project.parent == null) {
-	if (group == null) {
+	if (group == null || group.trim().isEmpty()) {
 		throw new Error('You must set maven group in the root project')
 	}
 	// it's the root project
