@@ -71,6 +71,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- more sonatype fixes
 
 ## [4.0.1] - 2021-04-09
 ### Fixed
