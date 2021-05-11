@@ -10,7 +10,7 @@ anchors:
   restore_cache_deps: &restore_cache_deps
     restore_cache:
       keys:
-        - gradle-deps-{{ checksum "build.gradle" }}-{{ checksum "gradle.properties" }}
+        - gradle-deps-{{ checksum "build.gradle" }}
         - gradle-deps-
   set_git_origin_to_https: &set_git_origin_to_https
     run:
@@ -34,7 +34,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.gradle/caches
-          key: gradle-deps-{{ checksum "build.gradle" }}-{{ checksum "gradle.properties" }}
+          key: gradle-deps-{{ checksum "build.gradle" }}
   changelog_print:
     << : *env_gradle
     steps:
