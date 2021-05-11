@@ -6,6 +6,7 @@ plugins {
 spotlessChangelog {
 	changelogFile 'README.md'
 	tagPrefix ''
+	tagMessage '{{changes}}'
 }
 
 apply from: 干.file('base/changelog.gradle')
