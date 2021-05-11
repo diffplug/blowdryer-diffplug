@@ -15,7 +15,7 @@ anchors:
   set_git_origin_to_https: &set_git_origin_to_https
     run:
       name: set git origin to https
-      command: git remote set-url --push origin https://github.com/diffplug/spotless-changelog
+      command: git remote set-url --push origin https://github.com/diffplug/blowdryer-diffplug
 
 jobs:
   assemble_and_check: 
