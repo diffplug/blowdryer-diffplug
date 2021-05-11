@@ -16,19 +16,19 @@ if (tasks.names.contains('changelogCheck')) {
 				dependsOn tasks.named('changelogCheck')
 			}
 		}
-	}
-	// ensures that changelog bump and push only happens if the publish was successful
-	tasks.named('changelogBump').configure {
-		if (plugins.hasPlugin('maven-publish')) {
-			String pubName = plugins.hasPlugin('java-gradle-plugin') ? 'PluginMaven' : 'MavenJava'
-			dependsOn "publish${pubName}PublicationToSonatypeRepository"
-			// only the root project has closeSonatypeStagingRepository, and it finalizes all publishToSonatype tasks
-			// https://github.com/gradle-nexus/publish-plugin
-			dependsOn rootProject.tasks.named('closeAndReleaseSonatypeStagingRepository')
-		}
-		// if we have a gradle plugin, we need to push it up to the plugin portal too
-		if (tasks.names.contains('publishPlugins')) {
-			dependsOn tasks.named('publishPlugins')
+		// ensures that changelog bump and push only happens if the publish was successful
+		tasks.named('changelogBump').configure {
+			if (plugins.hasPlugin('maven-publish')) {
+				String pubName = plugins.hasPlugin('java-gradle-plugin') ? 'PluginMaven' : 'MavenJava'
+				dependsOn "publish${pubName}PublicationToSonatypeRepository"
+				// only the root project has closeSonatypeStagingRepository, and it finalizes all publishToSonatype tasks
+				// https://github.com/gradle-nexus/publish-plugin
+				dependsOn rootProject.tasks.named('closeAndReleaseSonatypeStagingRepository')
+			}
+			// if we have a gradle plugin, we need to push it up to the plugin portal too
+			if (tasks.names.contains('publishPlugins')) {
+				dependsOn tasks.named('publishPlugins')
+			}
 		}
 	}
 } else {
@@ -37,22 +37,22 @@ if (tasks.names.contains('changelogCheck')) {
 
 	// same as above, but pull changelog stuff from the parent changelog
 	version = parent.spotlessChangelog.versionNext
+	def childProject = project;
 	afterEvaluate {
 		if (tasks.names.contains('jar')) {
 			tasks.named('jar').configure {
 				dependsOn parent.tasks.named('changelogCheck')
 			}
 		}
-	}
-	def childProject = project;
-	parent.tasks.named('changelogBump').configure {
-		if (childProject.plugins.hasPlugin('maven-publish')) {
-			String pubName = childProject.plugins.hasPlugin('java-gradle-plugin') ? 'PluginMaven' : 'MavenJava'
-			dependsOn childProject.tasks.named("publish${pubName}PublicationToSonatypeRepository")
-			dependsOn rootProject.tasks.named('closeAndReleaseSonatypeStagingRepository')
-		}
-		if (childProject.tasks.names.contains('publishPlugins')) {
-			dependsOn childProject.tasks.named('publishPlugins')
+		parent.tasks.named('changelogBump').configure {
+			if (childProject.plugins.hasPlugin('maven-publish')) {
+				String pubName = childProject.plugins.hasPlugin('java-gradle-plugin') ? 'PluginMaven' : 'MavenJava'
+				dependsOn childProject.tasks.named("publish${pubName}PublicationToSonatypeRepository")
+				dependsOn rootProject.tasks.named('closeAndReleaseSonatypeStagingRepository')
+			}
+			if (childProject.tasks.names.contains('publishPlugins')) {
+				dependsOn childProject.tasks.named('publishPlugins')
+			}
 		}
 	}
 }

@@ -1,4 +1,4 @@
-// 干.mustRunAfter('base/maven')
+// 干.mustRunAfter('base/maven'), except for root project where it can run anytime
 
 if (project.findProperty('enable_publishing') != 'true') {
 	return
