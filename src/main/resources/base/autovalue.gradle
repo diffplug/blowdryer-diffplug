@@ -1,9 +1,9 @@
 apply plugin: "com.diffplug.eclipse.apt"
 
-String VER_AUTOVALUE='1.7.4'
+String ver_autovalue  = 干.proj('VER_AUTOVALUE', 'the autovalue version the user wants')
 dependencies {
-	annotationProcessor     "com.google.auto.value:auto-value:${VER_AUTOVALUE}"
-	implementation          "com.google.auto.value:auto-value-annotations:${VER_AUTOVALUE}"
-	testAnnotationProcessor "com.google.auto.value:auto-value:${VER_AUTOVALUE}"
-	testImplementation      "com.google.auto.value:auto-value-annotations:${VER_AUTOVALUE}"
+	annotationProcessor     "com.google.auto.value:auto-value:${ver_autovalue}"
+	implementation          "com.google.auto.value:auto-value-annotations:${ver_autovalue}"
+	testAnnotationProcessor "com.google.auto.value:auto-value:${ver_autovalue}"
+	testImplementation      "com.google.auto.value:auto-value-annotations:${ver_autovalue}"
 }

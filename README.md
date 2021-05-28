@@ -19,6 +19,7 @@
 | [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-03-12  | `3.3.0`    |
 | *internal projects*      |  |  |
 | [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.1.0`    |
+| website                                                                  | 2021-05-28  | `5.0.0`    |
 
 ## Available scripts (without `.gradle` extension)
 
@@ -64,6 +65,7 @@
   - (also a subset of **base/maven**)
 - **base/autovalue** - adds Google AutoValue 1.7
   - requires `id 'com.diffplug.eclipse.apt' version '3.22.0'` (or later)
+  - `干.proj('VER_AUTOVALUE', 'the autovalue version the user wants')`
 - **swt/svg-images** - renders SVG images from `src/svg` into `src/main/resources/svg-rendered` at 1x and 2x DPI (in-line with SWT high-DPI support)
   - recommend adding `svg-rendered/` to `.gitignore`
   - requires `id 'com.diffplug.image-grinder' version '2.1.2'` (or later)
@@ -71,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- **BREAKING** `base/autovalue` now requires a `VER_AUTOVALUE` parameter
 
 ## [4.0.3] - 2021-05-11
 ### Fixed
