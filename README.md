@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [5.0.0] - 2021-05-28
 ### Added
 - **BREAKING** `base/autovalue` now requires a `VER_AUTOVALUE` parameter
 
