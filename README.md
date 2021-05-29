@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- no more errors on machines where `enable_publishing` hasn't been set
 
 ## [5.0.0] - 2021-05-28
 ### Added
