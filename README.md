@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [5.0.2] - 2021-05-30
 ### Fixed
 - no more Gradle 7.0 warnings abour `generateMetadataFileForPluginMavenPublication` having undeclared dependencies.
 
