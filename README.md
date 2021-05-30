@@ -9,7 +9,7 @@
 
 | user                                                                     | updated on  | to version |
 | :----------------------------------------------------------------------- | :---------- | :--------- |
-| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2020-06-05  | `3.2.4`    |
+| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2021-05-30  | `5.0.2`    |
 | [durian-globals](https://github.com/diffplug/durian-globals)             | 2020-06-05  | `3.2.2`    |
 | [durian-rx](https://github.com/diffplug/durian-rx)                       | 2020-01-12  | `3.1.0`    |
 | [durian-swt](https://github.com/diffplug/durian-swt)                     | 2020-01-12  | `3.1.0`    |
@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- no more Gradle 7.0 warnings abour `generateMetadataFileForPluginMavenPublication` having undeclared dependencies.
 
 ## [5.0.1] - 2021-05-29
 ### Fixed

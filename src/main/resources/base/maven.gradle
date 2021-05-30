@@ -79,3 +79,10 @@ publishing.publications.register(isPlugin ? 'pluginMaven' : 'mavenJava', MavenPu
 		}
 	}
 })
+
+if (isPlugin) {
+	tasks.named('generateMetadataFileForPluginMavenPublication') {
+		dependsOn('publishPluginJar')
+		dependsOn('publishPluginJavaDocsJar')
+	}
+}
