@@ -3,7 +3,7 @@
 
 [![License Apache 2.0](https://img.shields.io/badge/license-apache--2.0-brightgreen.svg)](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0))
 [![Changelog](https://img.shields.io/badge/keepachangelog-yes-brightgreen.svg)](#changelog)
-[![](https://jitci.com/gh/diffplug/blowdryer-diffplug/svg)](https://jitci.com/gh/diffplug/blowdryer-diffplug)
+[![CircleCI](https://circleci.com/gh/diffplug/blowdryer-diffplug.svg?style=shield)](https://circleci.com/gh/diffplug/blowdryer-diffplug)
 
 ## Users
 
