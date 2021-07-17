@@ -24,6 +24,10 @@ java {
 	withSourcesJar()
 }
 
+tasks.named('sourcesJar') {
+	dependsOn 'jar'
+}
+
 javadoc {
 	def makeLink = { url, text -> "<a href=\"${url}\" style=\"text-transform: none;\">${text}</a>" }
 	def javadocInfo = '<h2>' + makeLink("https://${git_url}", "${maven_artifact}:${version}") +
@@ -42,7 +46,10 @@ javadoc {
 	// setup links
 	options.links(javadocLinks)
 }
-apply from: 干.file('helper/javadoc-markdown.gradle')
+if (System.getProperty("java.version").startsWith("1.")) {
+	// only deal with jdrupes for Java 8 and below
+	apply from: 干.file('helper/javadoc-markdown.gradle')
+}
 apply from: 干.file('helper/javadoc-view.gradle')
 
 boolean isPlugin = plugins.hasPlugin('java-gradle-plugin')
