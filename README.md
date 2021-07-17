@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [5.0.3] - 2021-07-17
 ### Fixed
 - `sourcesJar` no longer throws warnings on Gradle 7.1
 - Only use `org.jdrupes.mdoclet` on Java 8 and below
