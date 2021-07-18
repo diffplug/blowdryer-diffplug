@@ -9,14 +9,14 @@
 
 | user                                                                     | updated on  | to version |
 | :----------------------------------------------------------------------- | :---------- | :--------- |
-| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2021-05-30  | `5.0.2`    |
+| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2021-05-30  | `5.0.4`    |
 | [durian-globals](https://github.com/diffplug/durian-globals)             | 2020-06-05  | `3.2.2`    |
 | [durian-rx](https://github.com/diffplug/durian-rx)                       | 2020-01-12  | `3.1.0`    |
-| [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-07-16  | `5.0.3`    |
-| [goomph](https://github.com/diffplug/goomph)                             | 2020-06-15  | `5.0.2`    |
+| [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-07-16  | `5.0.4`    |
+| [goomph](https://github.com/diffplug/goomph)                             | 2020-06-15  | `5.0.4`    |
 | [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
-| [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-06-15  | `5.0.2`    |
-| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-06-15  | `5.0.2`    |
+| [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-06-15  | `5.0.4`    |
+| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-06-15  | `4.0.3`    |
 | *internal projects*      |  |  |
 | [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.2.5`    |
 | website                                                                  | 2021-05-28  | `5.0.2`    |
@@ -77,21 +77,22 @@
 ## [5.0.4] - 2021-07-18
 ### Fixed
 - We were sometimes deploying gradle plugins without also deploying to maven, now fixed.
+- We yanked all earlier versions of 5.0.x to force an update because this is a fairly pernicious error.
 
-## [5.0.3] - 2021-07-17
+## [5.0.3] - 2021-07-17 [YANKED]
 ### Fixed
 - `sourcesJar` no longer throws warnings on Gradle 7.1
 - Only use `org.jdrupes.mdoclet` on Java 8 and below
 
-## [5.0.2] - 2021-05-30
+## [5.0.2] - 2021-05-30 [YANKED]
 ### Fixed
 - no more Gradle 7.0 warnings abour `generateMetadataFileForPluginMavenPublication` having undeclared dependencies.
 
-## [5.0.1] - 2021-05-29
+## [5.0.1] - 2021-05-29 [YANKED]
 ### Fixed
 - no more errors on machines where `enable_publishing` hasn't been set
 
-## [5.0.0] - 2021-05-28
+## [5.0.0] - 2021-05-28 [YANKED]
 ### Added
 - **BREAKING** `base/autovalue` now requires a `VER_AUTOVALUE` parameter
 
