@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [5.0.5] - 2021-07-18
 ### Fixed
 - Now encodes gpg key using Base64 which actually works on CircleCI.
 
