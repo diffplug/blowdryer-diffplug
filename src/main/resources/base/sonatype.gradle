@@ -6,9 +6,10 @@ if (project.findProperty('enable_publishing') != 'true') {
 
 def nexus_user     = 干.proj('nexus_user', 'username for nexus/mavencentral (or unset enable_publishing)')
 def nexus_pass     = 干.proj('nexus_pass', 'password for nexus/mavencentral (or unset enable_publishing)')
-def gpg_key        = 干.proj('gpg_key',        'gpg --export-secret-keys --armor <key-id>')
+def gpg_key64      = 干.proj('gpg_key64',      'gpg --export-secret-keys --armor <key-id>')
 def gpg_passphrase = 干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')
 
+def gpg_key = System.env['gpg_key64'].decodeBase64()
 if (plugins.hasPlugin('maven-publish')) {
 	apply plugin: 'signing'
 	signing {

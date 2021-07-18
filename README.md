@@ -55,7 +55,7 @@
   - unless `enable_publishing` is set in `gradle.properties`, this will be skipped
   - `干.proj('nexus_user', 'username for nexus/mavencentral')`
   - `干.proj('nexus_pass', 'password for nexus/mavencentral')`
-  - `干.proj('gpg_key',        'gpg --export-secret-keys --armor <key-id>')`
+  - `干.proj('gpg_key64',  'gpg --export-secret-keys --armor <key-id>')`
   - `干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')`
   - (also a subset of **base/maven**)
 - **base/osgi** - adds OSGi metadata to the jar
@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- Now encodes gpg key using Base64 which actually works on CircleCI.
 
 ## [5.0.4] - 2021-07-18
 ### Fixed
