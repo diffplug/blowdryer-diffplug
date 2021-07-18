@@ -9,13 +9,13 @@
 
 | user                                                                     | updated on  | to version |
 | :----------------------------------------------------------------------- | :---------- | :--------- |
-| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2021-05-30  | `5.0.4`    |
+| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2021-05-30  | `5.0.6`    |
 | [durian-globals](https://github.com/diffplug/durian-globals)             | 2020-06-05  | `3.2.2`    |
 | [durian-rx](https://github.com/diffplug/durian-rx)                       | 2020-01-12  | `3.1.0`    |
-| [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-07-16  | `5.0.4`    |
-| [goomph](https://github.com/diffplug/goomph)                             | 2020-06-15  | `5.0.4`    |
+| [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-07-16  | `5.0.6`    |
+| [goomph](https://github.com/diffplug/goomph)                             | 2020-06-15  | `5.0.6`    |
 | [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
-| [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-06-15  | `5.0.4`    |
+| [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-06-15  | `5.0.6`    |
 | [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-06-15  | `4.0.3`    |
 | *internal projects*      |  |  |
 | [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.2.5`    |
@@ -78,11 +78,11 @@
 ### Fixed
 - Bugfix for previous.
 
-## [5.0.5] - 2021-07-18
+## [5.0.5] - 2021-07-18 [YANKED]
 ### Fixed
 - Now encodes gpg key using Base64 which actually works on CircleCI.
 
-## [5.0.4] - 2021-07-18
+## [5.0.4] - 2021-07-18 [YANKED]
 ### Fixed
 - We were sometimes deploying gradle plugins without also deploying to maven, now fixed.
 - We yanked all earlier versions of 5.0.x to force an update because this is a fairly pernicious error.
