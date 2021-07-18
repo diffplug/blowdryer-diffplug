@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- We were sometimes deploying gradle plugins without also deploying to maven, now fixed.
 
 ## [5.0.3] - 2021-07-17
 ### Fixed
