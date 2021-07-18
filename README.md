@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- Bugfix for previous.
 
 ## [5.0.5] - 2021-07-18
 ### Fixed
