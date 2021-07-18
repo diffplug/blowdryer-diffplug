@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [5.0.6] - 2021-07-18
 ### Fixed
 - Bugfix for previous.
 
