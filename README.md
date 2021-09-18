@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- Builds that do not have Sonatype publish plugin applied now assume that they are publishing to GitLab.
 
 ## [5.0.6] - 2021-07-18
 ### Fixed
