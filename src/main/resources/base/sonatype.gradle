@@ -9,7 +9,7 @@ def nexus_pass     = 干.proj('nexus_pass', 'password for nexus/mavencentral (or
 def gpg_key64      = 干.proj('gpg_key64',      'gpg --export-secret-keys --armor <key-id>')
 def gpg_passphrase = 干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')
 
-def gpg_key = new String(System.env['gpg_key64'].decodeBase64())
+def gpg_key = new String(gpg_key64.decodeBase64())
 if (plugins.hasPlugin('maven-publish')) {
 	apply plugin: 'signing'
 	signing {

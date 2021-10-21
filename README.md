@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- `gpg64` from sonatype is now read using `干.proj` as intended.
 
 ## [5.1.0] - 2021-09-18
 ### Added
