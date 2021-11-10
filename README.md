@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- Fix sonatype publishing for multi-module projects.
 
 ## [5.1.1] - 2021-10-21
 ### Fixed

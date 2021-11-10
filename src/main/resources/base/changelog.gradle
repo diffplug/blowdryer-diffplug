@@ -64,7 +64,7 @@ if (tasks.names.contains('changelogCheck')) {
 		parent.tasks.named('changelogBump').configure {
 			if (requireEnablePublishing(it)) {
 				if (childProject.plugins.hasPlugin('maven-publish')) {
-					if (plugins.hasPlugin('io.github.gradle-nexus.publish-plugin')) {
+					if (rootProject.plugins.hasPlugin('io.github.gradle-nexus.publish-plugin')) {
 						String pubName = childProject.plugins.hasPlugin('java-gradle-plugin') ? 'PluginMaven' : 'MavenJava'
 						dependsOn childProject.tasks.named("publish${pubName}PublicationToSonatypeRepository")
 						dependsOn rootProject.tasks.named('closeAndReleaseSonatypeStagingRepository')
