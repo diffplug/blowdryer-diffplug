@@ -16,7 +16,7 @@
 | [goomph](https://github.com/diffplug/goomph)                             | 2020-06-15  | `5.0.6`    |
 | [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
 | [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-06-15  | `5.0.6`    |
-| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-06-15  | `4.0.3`    |
+| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-11-09  | `5.1.1`    |
 | *internal projects*      |  |  |
 | [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.2.5`    |
 | website                                                                  | 2021-05-28  | `5.0.2`    |
