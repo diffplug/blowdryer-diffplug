@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [5.1.3] - 2021-12-16
 ### Fixed
 - Update sonatype URL to [`https://s01.oss.sonatype.org/`](https://s01.oss.sonatype.org/) since we migrated for better performance.
 
