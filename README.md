@@ -9,14 +9,14 @@
 
 | user                                                                     | updated on  | to version |
 | :----------------------------------------------------------------------- | :---------- | :--------- |
-| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2021-05-30  | `5.0.6`    |
+| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2021-12-16  | `5.1.3`    |
 | [durian-globals](https://github.com/diffplug/durian-globals)             | 2020-06-05  | `3.2.2`    |
 | [durian-rx](https://github.com/diffplug/durian-rx)                       | 2020-01-12  | `3.1.0`    |
-| [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-07-16  | `5.0.6`    |
-| [goomph](https://github.com/diffplug/goomph)                             | 2020-06-15  | `5.0.6`    |
+| [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-12-16  | `5.1.3`    |
+| [goomph](https://github.com/diffplug/goomph)                             | 2020-12-16  | `5.1.3`    |
 | [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
-| [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-06-15  | `5.0.6`    |
-| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-11-09  | `5.1.1`    |
+| [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-12-16  | `5.1.3`    |
+| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-12-16  | `5.1.3`    |
 | *internal projects*      |  |  |
 | [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.2.5`    |
 | website                                                                  | 2021-05-28  | `5.0.2`    |
