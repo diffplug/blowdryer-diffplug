@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- Make the eclipse plugin optional for `gradle-plugin.gradle`
 
 ## [5.1.3] - 2021-12-16
 ### Fixed

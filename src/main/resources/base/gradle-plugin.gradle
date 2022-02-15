@@ -4,7 +4,9 @@ def plugin_tags = 干.proj('plugin_tags', 'space-delimited list of tags for the 
 
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'com.gradle.plugin-publish'
-tasks.eclipse.dependsOn(pluginUnderTestMetadata)
+if (tasks.names.contains('eclipse')) {
+	tasks.eclipse.dependsOn(pluginUnderTestMetadata)
+}
 
 gradlePlugin {
 	plugins {
