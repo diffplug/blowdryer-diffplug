@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [5.2.0] - 2022-02-15
 ### Added
 - `base/kotlin.gradle`
 ### Fixed
