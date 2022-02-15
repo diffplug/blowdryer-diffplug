@@ -1,0 +1,11 @@
+def kotlin_jvmTarget = 干.projOptional('kotlin_jvmTarget', 'JVM target for the kotlin plugin')
+
+apply plugin: 'org.jetbrains.kotlin.jvm'
+if (kotlin_jvmTarget != null) {
+	compileKotlin {
+		kotlinOptions.jvmTarget = kotlin_jvmTarget
+	}
+	compileTestKotlin {
+		kotlinOptions.jvmTarget = kotlin_jvmTarget
+	}
+}

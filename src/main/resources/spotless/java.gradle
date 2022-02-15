@@ -11,15 +11,21 @@ spotless {
 		clearSteps()
 		greclipse()
 	}
+	if (project == rootProject) {
+		groovyGradle {
+			target '*.gradle', 'buildSrc/*.gradle'
+		}
+	}
 	java {
 		licenseHeaderFile    干.file("spotless/license-${license}.java")
 		eclipse().configFile 干.file('spotless/format-eclipse.xml')
 		importOrder()
 		removeUnusedImports()
 	}
-	if (project == rootProject) {
-		groovyGradle {
-			target '*.gradle', 'buildSrc/*.gradle'
+	if (plugins.hasPlugin('org.jetbrains.kotlin.jvm')) {
+		kotlin {
+			ktfmt()
+			indentWithTabs(2)
 		}
 	}
 }

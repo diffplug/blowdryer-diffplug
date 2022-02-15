@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- `base/kotlin.gradle`
 ### Fixed
 - Make the eclipse plugin optional for `gradle-plugin.gradle`
 
