@@ -9,3 +9,9 @@ if (kotlin_jvmTarget != null) {
 		kotlinOptions.jvmTarget = kotlin_jvmTarget
 	}
 }
+compileKotlin {
+	kotlinOptions.freeCompilerArgs = ["-Xjvm-default=all"]
+}
+compileTestKotlin {
+	kotlinOptions.freeCompilerArgs = ["-Xjvm-default=all"]
+}
