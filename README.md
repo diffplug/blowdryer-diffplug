@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [5.2.1] - 2022-04-01
 ### Fixed
 - `base/kotlin` now specifies `freeCompilerArgs = ["-Xjvm-default=all"]` so that Kotlin interface method implementations can be used from Java.
 
