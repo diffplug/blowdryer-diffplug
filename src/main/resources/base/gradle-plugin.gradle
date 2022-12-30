@@ -1,3 +1,4 @@
+def url         = 干.proj('git_url', 'the git url with no protocol, e.g.: github.com/diffplug/blowdryer')
 def plugin_list = 干.proj('plugin_list', 'space-delimited list of plugin names').split()
 def plugin_tags = 干.proj('plugin_tags', 'space-delimited list of tags for the gradle plugin portal').split()
 
@@ -8,6 +9,8 @@ if (tasks.names.contains('eclipse')) {
 }
 
 gradlePlugin {
+	website = "https://${url}"
+	vcsUrl = "https://${url}.git"
 	plugins {
 		for (plugin in plugin_list) {
 			register plugin, {

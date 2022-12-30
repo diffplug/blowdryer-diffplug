@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- Gradle plugin publishing.
 
 ## [6.0.0] - 2022-12-30
 ### Fixed
