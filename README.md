@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- **BREAKING** New minimum requirements `gradle:7.6` and `com.gradle.plugin-publish:1.1.0`, adapted to those changes.
 
 ## [5.2.1] - 2022-04-01
 ### Fixed
