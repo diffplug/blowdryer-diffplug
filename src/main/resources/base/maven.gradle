@@ -46,10 +46,6 @@ javadoc {
 	// setup links
 	options.links(javadocLinks)
 }
-if (System.getProperty("java.version").startsWith("1.")) {
-	// only deal with jdrupes for Java 8 and below
-	apply from: 干.file('helper/javadoc-markdown.gradle')
-}
 apply from: 干.file('helper/javadoc-view.gradle')
 
 boolean isPlugin = plugins.hasPlugin('java-gradle-plugin')

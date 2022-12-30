@@ -1,4 +1,0 @@
-// 干.mustRunAfter('base/javadoc-agg')
-// 干.mustRunAfter('base/maven')
-
-apply plugin: 'org.jdrupes.mdoclet'

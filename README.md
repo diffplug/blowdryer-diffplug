@@ -75,6 +75,7 @@
 ## [Unreleased]
 ### Fixed
 - **BREAKING** New minimum requirements `gradle:7.6` and `com.gradle.plugin-publish:1.1.0`, adapted to those changes.
+- **BREAKING** Remove support for `org.jdrupes.mdoclet`.
 
 ## [5.2.1] - 2022-04-01
 ### Fixed
