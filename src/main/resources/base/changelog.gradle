@@ -20,6 +20,7 @@ def requireEnablePublishing(Task task) {
 if (tasks.names.contains('changelogCheck')) {
 	spotlessChangelog {
 		branch 'release'
+		appendDashSnapshotUnless_dashPrelease = true
 	}
 	// set the project version for POM, jar manifest, etc.
 	version = spotlessChangelog.versionNext
