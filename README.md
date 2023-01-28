@@ -73,10 +73,12 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- `spotlessChangelog { branch 'release' ...` because fine-grained tokens can't push to a protected `main`.
 
 ## [6.0.2] - 2023-01-28
 ### Fixed
-- Use `nexus_pass64` instead of `nexus_pass`
+- Use `nexus_pass64` instead of `nexus_pass`.
 
 ## [6.0.1] - 2022-12-30
 ### Fixed

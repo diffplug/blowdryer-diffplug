@@ -18,6 +18,9 @@ def requireEnablePublishing(Task task) {
 }
 
 if (tasks.names.contains('changelogCheck')) {
+	spotlessChangelog {
+		branch 'release'
+	}
 	// set the project version for POM, jar manifest, etc.
 	version = spotlessChangelog.versionNext
 	// ensures that nothing will be built if changelogPush will end up failing
