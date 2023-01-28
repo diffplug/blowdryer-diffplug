@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [6.0.3] - 2023-01-28
 ### Fixed
 - `spotlessChangelog { branch 'release' ...` because fine-grained tokens can't push to a protected `main`.
 
