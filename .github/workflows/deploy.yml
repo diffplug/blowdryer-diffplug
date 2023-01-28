@@ -18,4 +18,4 @@ jobs:
       - name: gradle caching
         uses: gradle/gradle-build-action@v2
       - name: publish all
-        run: ./gradlew changelogPush -Penable_publishing=true --stacktrace --warning-mode all
+        run: ./gradlew changelogPush -Prelease=true -Penable_publishing=true --stacktrace --warning-mode all
