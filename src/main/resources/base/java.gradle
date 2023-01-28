@@ -1,0 +1,10 @@
+def ver_java = 干.proj('ver_java', 'JVM target for the kotlin plugin (8, 11, etc)')
+
+apply plugin: 'java'
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+	options.release = Integer.parseInt(ver_java)
+}
+repositories {
+	mavenCentral()
+}

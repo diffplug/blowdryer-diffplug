@@ -76,6 +76,8 @@
 ### Added
 - `plugin.versions` and `plugin-kotlin.versions` to take advantage of the new Blowdryer version syncing.
 - `spotlessChangelog { appendDashSnapshotUnless_dashPrelease = true` because it's safer.
+### Changed
+- **BREAKING** renamed `java8.gradle` to `java.gradle` which requires `ver_java` property.
 
 ## [6.0.3] - 2023-01-28
 ### Fixed
