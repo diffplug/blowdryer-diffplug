@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+### Fixed
+- Use `nexus_pass64` instead of `nexus_pass`
 
 ## [6.0.1] - 2022-12-30
 ### Fixed
