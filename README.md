@@ -73,6 +73,8 @@
 # Changelog
 
 ## [Unreleased]
+
+## [7.0.0] - 2023-01-28
 ### Added
 - `plugin.versions` and `plugin-kotlin.versions` to take advantage of the new Blowdryer version syncing.
 - `spotlessChangelog { appendDashSnapshotUnless_dashPrelease = true` because it's safer.
