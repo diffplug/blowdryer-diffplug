@@ -1,4 +1,4 @@
-def ver_java = 干.proj('ver_java', 'JVM target for the kotlin plugin (8, 11, etc)')
+def ver_java = 干.proj('ver_java', 'target JVM bytecode (8, 11, etc)')
 
 apply plugin: 'java'
 tasks.withType(JavaCompile) {
