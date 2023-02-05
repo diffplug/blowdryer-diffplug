@@ -9,14 +9,17 @@
 
 | user                                                                     | updated on  | to version |
 | :----------------------------------------------------------------------- | :---------- | :--------- |
-| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2021-12-16  | `5.1.3`    |
+| [atplug](https://github.com/diffplug/atplug)                             | 2023-01-28  | `7.0.0`    |
+| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2023-01-28  | `7.0.0`    |
 | [durian-globals](https://github.com/diffplug/durian-globals)             | 2020-06-05  | `3.2.2`    |
 | [durian-rx](https://github.com/diffplug/durian-rx)                       | 2020-01-12  | `3.1.0`    |
 | [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-12-16  | `5.1.3`    |
 | [goomph](https://github.com/diffplug/goomph)                             | 2020-12-16  | `5.1.3`    |
+| [freshmark](https://github.com/diffplug/freshmark)                       | 2023-02-05  | `7.0.0`    |
+| [jscriptbox](https://github.com/diffplug/jscriptbox)                     | 2023-02-05  | `7.0.0`    |
 | [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
 | [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-12-16  | `5.1.3`    |
-| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2021-12-16  | `5.1.3`    |
+| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2023-01-28  | `7.0.0`    |
 | *internal projects*      |  |  |
 | [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.2.5`    |
 | website                                                                  | 2021-05-28  | `5.0.2`    |
@@ -27,7 +30,10 @@
   - if `com.diffplug.spotless-changelog` is applied in this or the parent project, then `versionLast` will be set in freshmark
 - **spotless/java** - applies to `*.gradle` and java sourcesets
   - `干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')`
-- **base/java8** - sets up java 8 with UTF-8, clean eclipse projects, and mavenCentral
+- **base/java** - sets up java 8 with UTF-8, clean eclipse projects, and mavenCentral
+  - `干.proj('ver_java', 'target JVM bytecode (8, 11, etc)')`
+- **base/kotlin** - apply `org.jetbrains.kotlin.jvm`
+  - `干.projOptional('kotlin_jvmTarget', 'JVM target for the kotlin plugin')`
 - **base/changelog** - pulls version information from a changelog in either the same project or the parent project
 - **base/gradle-plugin** - sets up gradle plugin metadata and plugin portal publishing, fixes eclipse to hook gradle
   - requires `id 'com.gradle.plugin-publish' version '0.10.1'`
@@ -54,7 +60,7 @@
   - requires `id 'io.github.gradle-nexus.publish-plugin' version '1.0.0'`
   - unless `enable_publishing` is set in `gradle.properties`, this will be skipped
   - `干.proj('nexus_user', 'username for nexus/mavencentral')`
-  - `干.proj('nexus_pass', 'password for nexus/mavencentral')`
+  - `干.proj('nexus_pass64', 'password for nexus/mavencentral')`
   - `干.proj('gpg_key64',  'gpg --export-secret-keys --armor <key-id>')`
   - `干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')`
   - (also a subset of **base/maven**)
