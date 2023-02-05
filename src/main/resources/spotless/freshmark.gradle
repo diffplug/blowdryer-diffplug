@@ -35,12 +35,6 @@ spotless {
 		ratchetFrom null
 	}
 }
-// until this gets merged https://github.com/diffplug/spotless/pull/1304
-tasks.named('spotlessFreshmark') {
-	if (JavaVersion.current().isJava12Compatible()) {
-		enabled = false
-	}
-}
 
 // if spotlessChangelog was applied to this project, use that to
 // reformat the markdown files after the changelog has been bumped

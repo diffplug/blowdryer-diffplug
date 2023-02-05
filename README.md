@@ -79,6 +79,10 @@
 # Changelog
 
 ## [Unreleased]
+### Changed
+- Bump `spotless` and `spotless-changelog` to latest, which means build now requires Java 11.
+### Fixed
+- `spotlessFreshmark` now runs on Java 17.
 
 ## [7.0.0] - 2023-01-28
 ### Added
@@ -86,6 +90,7 @@
 - `spotlessChangelog { appendDashSnapshotUnless_dashPrelease = true` because it's safer.
 ### Changed
 - **BREAKING** renamed `java8.gradle` to `java.gradle` which requires `ver_java` property.
+- `spotlessChangelog { branch 'release' ...` because fine-grained tokens can't push to a protected `main`.
 
 ## [6.0.3] - 2023-01-28
 ### Fixed
