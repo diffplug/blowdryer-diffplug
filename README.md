@@ -77,6 +77,8 @@
   - requires `id 'com.diffplug.image-grinder' version '2.1.2'` (or later)
 
 # Changelog
+### Changed
+- Bump plugin versions to latest.
 
 ## [Unreleased]
 ### Changed
