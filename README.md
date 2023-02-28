@@ -14,7 +14,7 @@
 | [durian-globals](https://github.com/diffplug/durian-globals)             | 2020-06-05  | `3.2.2`    |
 | [durian-rx](https://github.com/diffplug/durian-rx)                       | 2020-01-12  | `3.1.0`    |
 | [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-12-16  | `5.1.3`    |
-| [goomph](https://github.com/diffplug/goomph)                             | 2020-12-16  | `5.1.3`    |
+| [goomph](https://github.com/diffplug/goomph)                             | 2023-02-28  | `7.0.1`    |
 | [freshmark](https://github.com/diffplug/freshmark)                       | 2023-02-05  | `7.0.0`    |
 | [jscriptbox](https://github.com/diffplug/jscriptbox)                     | 2023-02-05  | `7.0.0`    |
 | [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
@@ -77,14 +77,11 @@
   - requires `id 'com.diffplug.image-grinder' version '2.1.2'` (or later)
 
 # Changelog
-### Changed
-- Bump plugin versions to latest.
-
 ## [Unreleased]
 
 ## [7.0.1] - 2023-02-28
 ### Changed
-- Bump `spotless` and `spotless-changelog` to latest, which means build now requires Java 11.
+- Bump plugins to latest, which means build now requires Java 11.
 ### Fixed
 - `spotlessFreshmark` now runs on Java 17.
 
