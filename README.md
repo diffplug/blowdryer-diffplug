@@ -81,6 +81,8 @@
 - Bump plugin versions to latest.
 
 ## [Unreleased]
+
+## [7.0.1] - 2023-02-28
 ### Changed
 - Bump `spotless` and `spotless-changelog` to latest, which means build now requires Java 11.
 ### Fixed
