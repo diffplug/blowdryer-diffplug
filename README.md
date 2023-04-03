@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+
+## [7.0.2] - 2023-04-03
 ### Changed
 - Bump Kotlin plugins to latest, `1.8.0` -> `1.8.20`.
 
