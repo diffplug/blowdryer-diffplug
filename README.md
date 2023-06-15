@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+### Added
+- Add `matconsolectl` license.
 
 ## [7.0.2] - 2023-04-03
 ### Changed
