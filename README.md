@@ -80,6 +80,8 @@
 ## [Unreleased]
 ### Added
 - Add `matconsolectl` license.
+### Changed
+- Bump Kotlin plugins to latest, `1.8.20` -> `1.8.22`, and all other plugins too.
 
 ## [7.0.2] - 2023-04-03
 ### Changed
