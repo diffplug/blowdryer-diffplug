@@ -1,5 +1,3 @@
-apply plugin: "com.diffplug.eclipse.apt"
-
 String ver_autovalue  = 干.proj('VER_AUTOVALUE', 'the autovalue version the user wants')
 dependencies {
 	annotationProcessor     "com.google.auto.value:auto-value:${ver_autovalue}"
