@@ -78,6 +78,11 @@
 
 # Changelog
 ## [Unreleased]
+### Changed
+- Removed `com.diffplug.eclipse.apt` from `base/autovalue` since we have mostly moved to IntelliJ.
+- Bump all plugins to latest, especially Kotlin to `1.9.21`
+### Fixed
+- Maven plugin is now friendly with Kotlin Multiplatform.
 
 ## [7.1.0] - 2023-06-15
 ### Added
