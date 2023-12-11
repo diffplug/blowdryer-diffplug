@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+
+## [7.1.1] - 2023-12-11
 ### Changed
 - Removed `com.diffplug.eclipse.apt` from `base/autovalue` since we have mostly moved to IntelliJ.
 - Bump all plugins to latest, especially Kotlin to `1.9.21`
