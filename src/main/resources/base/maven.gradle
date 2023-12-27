@@ -20,6 +20,8 @@ def license_url      = 干.prop('base/maven', "${license}_url")
 def license_comments = 干.prop('base/maven', "${license}_comments")
 
 boolean isKMP = project.pluginManager.hasPlugin('org.jetbrains.kotlin.multiplatform')
+boolean isPlugin = plugins.hasPlugin('java-gradle-plugin')
+
 if (!isKMP) {
 	java {
 		withJavadocJar()
@@ -52,9 +54,27 @@ if (!isKMP) {
 }
 
 
-boolean isPlugin = plugins.hasPlugin('java-gradle-plugin')
-publishing.publications.register(isPlugin ? 'pluginMaven' : 'mavenJava', MavenPublication, {
-	artifactId = maven_artifact
+if (publishing.publications.isEmpty()) {
+	publishing.publications.register(isPlugin ? 'pluginMaven' : 'mavenJava', MavenPublication, {
+	})
+}
+
+publishing.publications.withType(MavenPublication) {
+	// KMP-aware artifactId
+	if (artifactId.endsWith('-jvm')) {
+		artifactId = maven_artifact + '-jvm'
+		// create javadoc manually to keep MavenCentral happy
+		def javadocJar = tasks.register('dokkaJavadoc', Jar.class) {
+			dependsOn('dokkatooGenerate')
+			archiveClassifier.set("javadoc")
+			from('build/dokka-module/html')
+		}
+		artifact javadocJar
+	} else if (artifactId.endsWith("-js")) {
+		artifactId = maven_artifact + '-js'
+	} else {
+		artifactId = maven_artifact
+	}
 	if (!isPlugin && !isKMP) {
 		from components.java
 	}
@@ -85,4 +105,4 @@ publishing.publications.register(isPlugin ? 'pluginMaven' : 'mavenJava', MavenPu
 			url = "https://$git_url"
 		}
 	}
-})
+}

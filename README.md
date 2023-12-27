@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+### Added
+- Publishing the java part of Kotlin multiplatform jars is now supported.
 
 ## [7.1.1] - 2023-12-11
 ### Changed
