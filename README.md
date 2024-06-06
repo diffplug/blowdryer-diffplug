@@ -78,6 +78,10 @@
 
 # Changelog
 ## [Unreleased]
+### Added
+- `spotless/kotlin-dense.gradle` for tight packing
+### Changed
+- Bump all plugin versions, in particular Kotlin to 2.0.0
 
 ## [7.2.0] - 2023-12-27
 ### Added
