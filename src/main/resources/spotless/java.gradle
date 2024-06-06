@@ -1,6 +1,8 @@
 def license = 干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')
 boolean setLicenseHeaderYearsFromGitHistory = 'true'.equals(project.findProperty('spotlessSetLicenseHeaderYearsFromGitHistory'))
 
+ext.spotless_java_applied = true
+
 apply plugin: 'com.diffplug.spotless'
 spotless {
 	if (!setLicenseHeaderYearsFromGitHistory) {

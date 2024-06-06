@@ -1,0 +1,55 @@
+def license = 干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')
+boolean setLicenseHeaderYearsFromGitHistory = 'true'.equals(project.findProperty('spotlessSetLicenseHeaderYearsFromGitHistory'))
+
+def spotless_java_applied = hasProperty('spotless_java_applied') && ext.spotless_java_applied
+
+apply plugin: 'com.diffplug.spotless'
+spotless {
+	if (!spotless_java_applied) {
+		if (!setLicenseHeaderYearsFromGitHistory) {
+			ratchetFrom 'origin/main'
+		}
+		groovyGradle {
+			clearSteps() // play nicely with java.gradle
+			target '*.gradle', 'buildSrc/*.gradle'
+			greclipse()
+			indentWithSpaces(2)
+		}
+	}
+	if (plugins.hasPlugin('org.jetbrains.kotlin.jvm') || plugins.hasPlugin('org.jetbrains.kotlin.multiplatform')) {
+		kotlin {
+			clearSteps() // play nicely with java.gradle
+			target 'src/**/*.kt'
+			licenseHeaderFile 干.file("spotless/license-${license}.java")
+			ktfmt()
+			if (spotless_java_applied) {
+				indentWithTabs(2)
+			}
+			for (modifier in [
+						'',
+						'override ',
+						'public ',
+						'protected ',
+						'private ',
+						'internal ',
+						'infix ',
+						'expected ',
+						'actual ',
+						'@JvmStatic '
+					]) {
+				for (key in [
+							'inline',
+							'fun',
+							'abstract fun',
+							'suspend fun',
+							'val',
+							'override'
+						]) {
+					String toCheck = "$modifier$key"
+					replaceRegex("dense $toCheck", "\n\n(\\s*)$toCheck ", "\n\$1$toCheck ")
+				}
+			}
+			replaceRegex("dense test order", "@Test(\\s*)@Order\\((\\d+)\\)", "@Test @Order(\$2)")
+		}
+	}
+}
