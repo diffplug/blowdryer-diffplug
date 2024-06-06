@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+
+## [7.3.0] - 2024-06-06
 ### Added
 - `spotless/kotlin-dense.gradle` for tight packing
 ### Changed
