@@ -19,5 +19,9 @@ jobs:
           distribution: 'temurin'
       - name: gradle caching
         uses: gradle/gradle-build-action@v2
+      - run: git fetch origin main
       - name: publish all
         run: ./gradlew changelogPush -Prelease=true -Penable_publishing=true --stacktrace --warning-mode all
+      - run: git checkout main
+      - run: git merge release --ff-only
+      - run: git push origin main
