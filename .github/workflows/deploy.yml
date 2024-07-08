@@ -6,8 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: deploy
     name: deploy
+    permissions:
+      contents: write
     env:
-      gh_token: ${{ secrets.GH_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - name: jdk 11
@@ -17,5 +19,9 @@ jobs:
           distribution: 'temurin'
       - name: gradle caching
         uses: gradle/gradle-build-action@v2
+      - run: git fetch origin main
       - name: publish all
         run: ./gradlew changelogPush -Prelease=true -Penable_publishing=true --stacktrace --warning-mode all
+      - run: git checkout main
+      - run: git merge release --ff-only
+      - run: git push origin main
