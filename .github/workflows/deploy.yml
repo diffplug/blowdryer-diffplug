@@ -6,8 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: deploy
     name: deploy
+    permissions:
+      contents: write
     env:
-      gh_token: ${{ secrets.GH_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - name: jdk 11
