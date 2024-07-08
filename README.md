@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+
+## [8.0.0] - 2024-07-08
 ### Changed
 - **BREAKING** `spotlessChangelog` now creates GitHub releases by default ([#6](https://github.com/diffplug/blowdryer-diffplug/pull/6))
   - you need to update your `deploy.yml`
