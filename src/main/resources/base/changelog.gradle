@@ -31,6 +31,8 @@ if (tasks.names.contains('changelogCheck')) {
 	spotlessChangelog {
 		branch 'release'
 		appendDashSnapshotUnless_dashPrelease = true
+		tagMessage '{{changes}}'
+		runAfterPush "gh release create release/{{version}} --title 'v{{version}}' --notes-from-tag"
 	}
 	// set the project version for POM, jar manifest, etc.
 	version = spotlessChangelog.versionNext
