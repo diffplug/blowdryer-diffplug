@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+### Changed
+- Tag message now has the `v{{version}}\n\n{changes}` format, as workaround for [cli/cli#9299](https://github.com/cli/cli/issues/9299).
 
 ## [8.0.0] - 2024-07-08
 ### Changed
