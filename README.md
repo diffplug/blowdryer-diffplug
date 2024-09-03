@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+
+## [8.0.2] - 2024-09-03
 ### Changed
 - Bump plugin versions to latest.
 
