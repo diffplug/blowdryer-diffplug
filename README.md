@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+
+## [8.0.3] - 2024-12-11
 ### Changed
 - Bump plugin versions to latest (Kotlin 2.1.0).
 
