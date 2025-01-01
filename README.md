@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+### Changed
+- Better default tag message for spotless-changelog.
 
 ## [8.0.3] - 2024-12-11
 ### Changed
