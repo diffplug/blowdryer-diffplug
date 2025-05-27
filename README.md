@@ -79,6 +79,7 @@
 # Changelog
 ## [Unreleased]
 ### Changed
+- Bump all versions to latest, especially Kotlin `2.1.0` -> `2.1.21`.
 - Hardcoded the `2C7F998F4272C851` signing subkey for our new GPG setup.
 - Better default tag message for spotless-changelog.
 
