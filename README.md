@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+### Fixed
+- **BREAKING** updating signing subkey to match what our org-level GitHub actions actually has.
 
 ## [8.0.4] - 2025-05-27
 ### Changed
