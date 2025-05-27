@@ -79,6 +79,7 @@
 # Changelog
 ## [Unreleased]
 ### Changed
+- Hardcoded the `2C7F998F4272C851` signing subkey for our new GPG setup.
 - Better default tag message for spotless-changelog.
 
 ## [8.0.3] - 2024-12-11

@@ -5,7 +5,7 @@ if (project.findProperty('enable_publishing') != 'true') {
 }
 
 def nexus_user     = 干.proj('nexus_user',     'username for nexus/mavencentral (or unset enable_publishing)')
-def nexus_pass64   = 干.proj('nexus_pass64', 'password for nexus/mavencentral (or unset enable_publishing)')
+def nexus_pass64   = 干.proj('nexus_pass64',   'password for nexus/mavencentral (or unset enable_publishing)')
 def gpg_key64      = 干.proj('gpg_key64',      'gpg --export-secret-keys --armor <key-id>')
 def gpg_passphrase = 干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')
 
@@ -14,7 +14,7 @@ def gpg_key = new String(gpg_key64.decodeBase64())
 if (plugins.hasPlugin('maven-publish')) {
 	apply plugin: 'signing'
 	signing {
-		useInMemoryPgpKeys(gpg_key, gpg_passphrase)
+		useInMemoryPgpKeys('2C7F998F4272C851', gpg_key, gpg_passphrase)
 		sign(publishing.publications)
 	}
 }
