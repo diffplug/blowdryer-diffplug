@@ -6,8 +6,8 @@ import com.diffplug.common.swt.os.OS
 
 // adds a javadocView task, which shows the javadoc
 tasks.register('javadocView') {
-	group JavaBasePlugin.DOCUMENTATION_GROUP;
-	description 'Views the Javadoc in a browser.'
+	group = JavaBasePlugin.DOCUMENTATION_GROUP;
+	description = 'Views the Javadoc in a browser.'
 	dependsOn tasks.named('javadoc')
 	doLast {
 		project.exec {
