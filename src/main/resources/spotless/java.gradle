@@ -27,7 +27,7 @@ spotless {
 	if (plugins.hasPlugin('org.jetbrains.kotlin.jvm')) {
 		kotlin {
 			ktfmt()
-			indentWithTabs(2)
+			leadingSpacesToTabs(2)
 		}
 	}
 }

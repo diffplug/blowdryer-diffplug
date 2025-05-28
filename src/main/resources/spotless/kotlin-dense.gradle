@@ -23,7 +23,7 @@ spotless {
 			licenseHeaderFile 干.file("spotless/license-${license}.java")
 			ktfmt()
 			if (spotless_java_applied) {
-				indentWithTabs(2)
+				leadingSpacesToTabs(2)
 			}
 			for (modifier in [
 						'',
