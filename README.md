@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+
+## [9.0.1] - 2025-06-23
 ### Fixed
 - Fix spotless deprecation warnings.
 - Fix assignment deprecation warnings in `javadoc-view`.
