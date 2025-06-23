@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+### Fixed
+- More spotless deprecation warnings.
 
 ## [9.0.1] - 2025-06-23
 ### Fixed

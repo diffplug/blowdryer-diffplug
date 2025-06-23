@@ -13,7 +13,7 @@ spotless {
 			clearSteps() // play nicely with java.gradle
 			target '*.gradle', 'buildSrc/*.gradle'
 			greclipse()
-			indentWithSpaces(2)
+			leadingTabsToSpaces(2)
 		}
 	}
 	if (plugins.hasPlugin('org.jetbrains.kotlin.jvm') || plugins.hasPlugin('org.jetbrains.kotlin.multiplatform')) {
