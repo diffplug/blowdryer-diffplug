@@ -10,8 +10,14 @@ if (kotlin_jvmTarget != null) {
 	}
 }
 compileKotlin {
-	kotlinOptions.freeCompilerArgs = ["-Xjvm-default=all"]
+	kotlinOptions.freeCompilerArgs = [
+		"-Xjvm-default=all",
+		"-Xconsistent-data-class-copy-visibility"
+	]
 }
 compileTestKotlin {
-	kotlinOptions.freeCompilerArgs = ["-Xjvm-default=all"]
+	kotlinOptions.freeCompilerArgs = [
+		"-Xjvm-default=all",
+		"-Xconsistent-data-class-copy-visibility"
+	]
 }
