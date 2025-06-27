@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+
+## [9.0.3] - 2025-06-27
 ### Changed
 - Bumpled Kotlin to 2.2
 - Added `-Xconsistent-data-class-copy-visibility` to `compileKotlin` and `compileTestKotlin`
