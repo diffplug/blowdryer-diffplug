@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+### Changed
+- Bump sonatype URLs now that [the old ones are dead](https://github.com/diffplug/spotless/pull/2539).
 
 ## [9.0.3] - 2025-06-27
 ### Changed
