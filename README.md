@@ -78,6 +78,8 @@
 
 # Changelog
 ## [Unreleased]
+### Fixed
+- `changelogBumpFreshmarkGitAdd` no longer triggers a "deprecated in Gradle 9" warning.
 
 ## [9.0.4] - 2025-07-08
 ### Changed

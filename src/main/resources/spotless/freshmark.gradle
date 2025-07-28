@@ -55,7 +55,7 @@ if (changelogExt != null) {
 		dependsOn(changelogBumpFreshmark)
 		// do the git add
 		doLast {
-			exec { commandLine 'git', 'add' , '*.md' }
+			services.get(ExecOperations).exec { commandLine 'git', 'add' , '*.md' }
 		}
 	}
 	tasks.named('changelogPush').configure {
