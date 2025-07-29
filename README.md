@@ -20,6 +20,7 @@
 | [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
 | [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-12-16  | `5.1.3`    |
 | [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2023-01-28  | `7.0.0`    |
+| [webtools](https://github.com/diffplug/webtools)                         | 2025-07-28  | `9.0.5`    |
 | *internal projects*      |  |  |
 | [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.2.5`    |
 | website                                                                  | 2021-05-28  | `5.0.2`    |
