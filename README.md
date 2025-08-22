@@ -79,6 +79,8 @@
 
 # Changelog
 ## [Unreleased]
+
+## [9.1.0] - 2025-08-22
 ### Added
 - In `settings.gradle`, add `apply from: 干.file('base/buildscan-on-ci.gradle')` and you'll get buildscans in CI.
 
