@@ -1,0 +1,10 @@
+def isCI = providers.environmentVariable('CI').present
+develocity {
+	buildScan {
+		termsOfUseUrl = "https://gradle.com/terms-of-service"
+		termsOfUseAgree = "yes"
+		publishing {
+			onlyIf { isCI }
+		}
+	}
+}
