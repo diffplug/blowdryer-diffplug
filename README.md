@@ -5,84 +5,12 @@
 [![Changelog](https://img.shields.io/badge/keepachangelog-yes-brightgreen.svg)](#changelog)
 [![CircleCI](https://circleci.com/gh/diffplug/blowdryer-diffplug.svg?style=shield)](https://circleci.com/gh/diffplug/blowdryer-diffplug)
 
-## Users
-
-| user                                                                     | updated on  | to version |
-| :----------------------------------------------------------------------- | :---------- | :--------- |
-| [atplug](https://github.com/diffplug/atplug)                             | 2023-01-28  | `7.0.0`    |
-| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2023-01-28  | `7.0.0`    |
-| [durian-globals](https://github.com/diffplug/durian-globals)             | 2020-06-05  | `3.2.2`    |
-| [durian-rx](https://github.com/diffplug/durian-rx)                       | 2020-01-12  | `3.1.0`    |
-| [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-12-16  | `5.1.3`    |
-| [goomph](https://github.com/diffplug/goomph)                             | 2023-02-28  | `7.0.1`    |
-| [freshmark](https://github.com/diffplug/freshmark)                       | 2023-02-05  | `7.0.0`    |
-| [jscriptbox](https://github.com/diffplug/jscriptbox)                     | 2023-02-05  | `7.0.0`    |
-| [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
-| [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-12-16  | `5.1.3`    |
-| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2023-01-28  | `7.0.0`    |
-| [webtools](https://github.com/diffplug/webtools)                         | 2025-07-28  | `9.0.5`    |
-| *internal projects*      |  |  |
-| [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.2.5`    |
-| website                                                                  | 2021-05-28  | `5.0.2`    |
-
-## Available scripts (without `.gradle` extension)
-
-- **spotless/freshmark** - applies to `*.gradle` and `*.md`
-  - if `com.diffplug.spotless-changelog` is applied in this or the parent project, then `versionLast` will be set in freshmark
-- **spotless/java** - applies to `*.gradle` and java sourcesets
-  - `干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')`
-- **base/java** - sets up java 8 with UTF-8, clean eclipse projects, and mavenCentral
-  - `干.proj('ver_java', 'target JVM bytecode (8, 11, etc)')`
-- **base/kotlin** - apply `org.jetbrains.kotlin.jvm`
-  - `干.projOptional('kotlin_jvmTarget', 'JVM target for the kotlin plugin')`
-- **base/changelog** - pulls version information from a changelog in either the same project or the parent project
-- **base/gradle-plugin** - sets up gradle plugin metadata and plugin portal publishing, fixes eclipse to hook gradle
-  - requires `id 'com.gradle.plugin-publish' version '0.10.1'`
-  - `干.proj('git_url', 'the git url with no protocol, e.g.: github.com/diffplug/blowdryer')`
-  - `干.proj('plugin_tags', 'space-delimited list of tags for the gradle plugin portal')`
-  - `干.proj('plugin_list', 'space-delimited list of plugin names')`
-    - `干.proj("plugin_${plugin}_id", "for ${plugin}: apply plugin: 'id'")`
-    - `干.proj("plugin_${plugin}_impl", "for ${plugin}: implementationClass")`
-    - `干.proj("plugin_${plugin}_name", "for ${plugin}: name for the plugin portal")`
-    - `干.proj("plugin_${plugin}_desc", "for ${plugin}: description for the plugin portal")`
-    - optional: `"plugin_${plugin}_tags" : space-delimited list of tags to override plugin_tags only for ${plugin}`
-- **base/maven** - sets up maven-publish and javadoc
-  - `干.proj('git_url', 'the git url with no protocol, e.g.: github.com/diffplug/blowdryer')`
-  - `干.proj('maven_group', 'the maven group, recommend com.diffplug')`
-  - `干.proj('maven_artifact', 'the maven artifactId')`
-  - `干.proj('maven_name', 'human-friendly name')`
-  - `干.proj('maven_desc', 'human-friendly description')`
-  - `干.proj('javadoc_links', "space-delimited links, if you add '/package-list' to the urls you should get a package list")`
-  - `干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')`
-- **base/javadoc-agg** - aggregates javadoc from subprojects
-  - `干.proj('javadoc_agg', 'space-delimited list of projects containing javadoc to be aggregated')`
-  - (also a subset of **base/maven**)
-- **base/sonatype** - publishes to mavenCentral
-  - requires `id 'io.github.gradle-nexus.publish-plugin' version '1.0.0'`
-  - unless `enable_publishing` is set in `gradle.properties`, this will be skipped
-  - `干.proj('nexus_user', 'username for nexus/mavencentral')`
-  - `干.proj('nexus_pass64', 'password for nexus/mavencentral')`
-  - `干.proj('gpg_key64',  'gpg --export-secret-keys --armor <key-id>')`
-  - `干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')`
-  - (also a subset of **base/maven**)
-- **base/osgi** - adds OSGi metadata to the jar
-  - requires `id 'com.diffplug.osgi.bndmanifest' version '3.22.0'` (or later)
-  - `干.proj('osgi_export', '-exportcontents bnd directive')`
-  - `干.proj('osgi_symbolic_name', 'Bundle-SymbolicName')`
-  - (also a subset of **base/maven**)
-- **base/autovalue** - adds Google AutoValue 1.7
-  - requires `id 'com.diffplug.eclipse.apt' version '3.22.0'` (or later)
-  - `干.proj('VER_AUTOVALUE', 'the autovalue version the user wants')`
-- **swt/svg-images** - renders SVG images from `src/svg` into `src/main/resources/svg-rendered` at 1x and 2x DPI (in-line with SWT high-DPI support)
-  - recommend adding `svg-rendered/` to `.gitignore`
-  - requires `id 'com.diffplug.image-grinder' version '2.1.2'` (or later)
-
 # Changelog
 ## [Unreleased]
 
 ## [9.1.0] - 2025-08-22
 ### Added
-- In `settings.gradle`, add `apply from: 干.file('base/buildscan-on-ci.gradle')` and you'll get buildscans in CI.
+- In `settings.gradle`, add `apply from: com.diffplug.blowdryer.Blowdryer.file('base/buildscan-on-ci.gradle')` and you'll get buildscans in CI.
 
 ## [9.0.5] - 2025-07-29
 ### Fixed
@@ -335,6 +263,79 @@
 First release.
 
 <!-- END CHANGELOG -->
+
+
+## Users
+
+| user                                                                     | updated on  | to version |
+| :----------------------------------------------------------------------- | :---------- | :--------- |
+| [atplug](https://github.com/diffplug/atplug)                             | 2023-01-28  | `7.0.0`    |
+| [blowdryer](https://github.com/diffplug/blowdryer)                       | 2023-01-28  | `7.0.0`    |
+| [durian-globals](https://github.com/diffplug/durian-globals)             | 2020-06-05  | `3.2.2`    |
+| [durian-rx](https://github.com/diffplug/durian-rx)                       | 2020-01-12  | `3.1.0`    |
+| [durian-swt](https://github.com/diffplug/durian-swt)                     | 2021-12-16  | `5.1.3`    |
+| [goomph](https://github.com/diffplug/goomph)                             | 2023-02-28  | `7.0.1`    |
+| [freshmark](https://github.com/diffplug/freshmark)                       | 2023-02-05  | `7.0.0`    |
+| [jscriptbox](https://github.com/diffplug/jscriptbox)                     | 2023-02-05  | `7.0.0`    |
+| [libxdiff](https://github.com/diffplug/libxdiff)                         | 2021-02-18  | `3.3.0`    |
+| [image-grinder](https://github.com/diffplug/image-grinder)               | 2020-12-16  | `5.1.3`    |
+| [spotless-changelog](https://github.com/diffplug/spotless-changelog)     | 2023-01-28  | `7.0.0`    |
+| [webtools](https://github.com/diffplug/webtools)                         | 2025-07-28  | `9.0.5`    |
+| *internal projects*      |  |  |
+| [buildcloset](http://gitlab.diffplug.local/diffplug/buildcloset/)        | 2020-01-12  | `3.2.5`    |
+| website                                                                  | 2021-05-28  | `5.0.2`    |
+
+## Available scripts (without `.gradle` extension)
+
+- **spotless/freshmark** - applies to `*.gradle` and `*.md`
+  - if `com.diffplug.spotless-changelog` is applied in this or the parent project, then `versionLast` will be set in freshmark
+- **spotless/java** - applies to `*.gradle` and java sourcesets
+  - `干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')`
+- **base/java** - sets up java 8 with UTF-8, clean eclipse projects, and mavenCentral
+  - `干.proj('ver_java', 'target JVM bytecode (8, 11, etc)')`
+- **base/kotlin** - apply `org.jetbrains.kotlin.jvm`
+  - `干.projOptional('kotlin_jvmTarget', 'JVM target for the kotlin plugin')`
+- **base/changelog** - pulls version information from a changelog in either the same project or the parent project
+- **base/gradle-plugin** - sets up gradle plugin metadata and plugin portal publishing, fixes eclipse to hook gradle
+  - requires `id 'com.gradle.plugin-publish' version '0.10.1'`
+  - `干.proj('git_url', 'the git url with no protocol, e.g.: github.com/diffplug/blowdryer')`
+  - `干.proj('plugin_tags', 'space-delimited list of tags for the gradle plugin portal')`
+  - `干.proj('plugin_list', 'space-delimited list of plugin names')`
+    - `干.proj("plugin_${plugin}_id", "for ${plugin}: apply plugin: 'id'")`
+    - `干.proj("plugin_${plugin}_impl", "for ${plugin}: implementationClass")`
+    - `干.proj("plugin_${plugin}_name", "for ${plugin}: name for the plugin portal")`
+    - `干.proj("plugin_${plugin}_desc", "for ${plugin}: description for the plugin portal")`
+    - optional: `"plugin_${plugin}_tags" : space-delimited list of tags to override plugin_tags only for ${plugin}`
+- **base/maven** - sets up maven-publish and javadoc
+  - `干.proj('git_url', 'the git url with no protocol, e.g.: github.com/diffplug/blowdryer')`
+  - `干.proj('maven_group', 'the maven group, recommend com.diffplug')`
+  - `干.proj('maven_artifact', 'the maven artifactId')`
+  - `干.proj('maven_name', 'human-friendly name')`
+  - `干.proj('maven_desc', 'human-friendly description')`
+  - `干.proj('javadoc_links', "space-delimited links, if you add '/package-list' to the urls you should get a package list")`
+  - `干.proj('license', 'supported: [apache, confidential, lgpl-2.1]')`
+- **base/javadoc-agg** - aggregates javadoc from subprojects
+  - `干.proj('javadoc_agg', 'space-delimited list of projects containing javadoc to be aggregated')`
+  - (also a subset of **base/maven**)
+- **base/sonatype** - publishes to mavenCentral
+  - requires `id 'io.github.gradle-nexus.publish-plugin' version '1.0.0'`
+  - unless `enable_publishing` is set in `gradle.properties`, this will be skipped
+  - `干.proj('nexus_user', 'username for nexus/mavencentral')`
+  - `干.proj('nexus_pass64', 'password for nexus/mavencentral')`
+  - `干.proj('gpg_key64',  'gpg --export-secret-keys --armor <key-id>')`
+  - `干.proj('gpg_passphrase', 'passphrase for unlocking gpg_key')`
+  - (also a subset of **base/maven**)
+- **base/osgi** - adds OSGi metadata to the jar
+  - requires `id 'com.diffplug.osgi.bndmanifest' version '3.22.0'` (or later)
+  - `干.proj('osgi_export', '-exportcontents bnd directive')`
+  - `干.proj('osgi_symbolic_name', 'Bundle-SymbolicName')`
+  - (also a subset of **base/maven**)
+- **base/autovalue** - adds Google AutoValue 1.7
+  - requires `id 'com.diffplug.eclipse.apt' version '3.22.0'` (or later)
+  - `干.proj('VER_AUTOVALUE', 'the autovalue version the user wants')`
+- **swt/svg-images** - renders SVG images from `src/svg` into `src/main/resources/svg-rendered` at 1x and 2x DPI (in-line with SWT high-DPI support)
+  - recommend adding `svg-rendered/` to `.gitignore`
+  - requires `id 'com.diffplug.image-grinder' version '2.1.2'` (or later)
 
 # Acknowledgements
 
